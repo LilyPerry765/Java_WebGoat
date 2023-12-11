@@ -1,0 +1,10 @@
+stages:
+- test
+
+sast:
+  stage: test
+  variables:
+    SAST_EXCLUDED_PATHS: spec,test,tests,tmp,.mvn/wrapper,robot,src/it,src/main/java/org/owasp/webgoat/container,src/main/java/org/owasp/webgoat/server,src/main/java/org/owasp/webgoat/webwolf,src/main/resources
+  
+include:
+- template: Security/SAST.gitlab-ci.yml
